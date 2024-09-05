@@ -1,0 +1,36 @@
+.list-container{}
+.tasks-container{
+    display: flex;
+    flex-direction: row;
+}
+.task{
+    min-width: 20vw;
+    height: 20vw;
+    margin: 20px 10px 0 10px;
+    border: black 1px solid;
+}
+
+
+.task-mask-enter{
+    transform: translate(-100vw);
+}
+.task-mask-enter-active {
+    transform: translate(0);
+    transition: transform 400ms ease-out;
+}
+
+.task-mask-enter ~ .task:not(.task-mask-exit){
+    transform: translate(calc(-20vw + 10px));
+}
+.task-mask-enter-active ~ .task:not(.task-mask-exit){
+    transform: translate(0);
+    transition: transform 400ms ease-out;
+}
+
+.task-mask-exit {
+    transform: translate(0);
+}
+.task-mask-exit-active {
+    transform: translate(100vw);
+    transition: transform 500ms ease-in;
+}
